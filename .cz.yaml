@@ -1,0 +1,15 @@
+# Commitizen configuration for local commit formatting and versioning
+
+name: cz_conventional_commits
+version: 1.1
+tag_format: v$version
+
+# Optional questions override for `cz commit`
+# You can uncomment and customize these if needed
+# questions:
+#   type:
+#     description: Select the type of change you are committing
+#   scope:
+#     description: Provide the scope of the change (optional)
+#   subject:
+#     description: Write a short, imperative description of the change
