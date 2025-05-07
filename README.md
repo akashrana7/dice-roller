@@ -1,3 +1,6 @@
+<p align="center">
+    <img src="https://github.com/mattyhakin/dice-roller/blob/main/dice-roller-header.png?raw=true" alt="Dice Roller"/>
+
 # 🎲 Dice Roller
 
 A lightweight and flexible Python tool for simulating dice rolls. Perfect for tabletop RPGs, board games, and quick probability testing.
