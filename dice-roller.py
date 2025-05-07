@@ -1,92 +1,65 @@
 import random
 import os
+import re
+import argparse
 
-DICE_ART = {
-    1: (
-        "┌─────────┐",
-        "│         │",
-        "│    ●    │",
-        "│         │",
-        "└─────────┘",
-    ),
-    2: (
-        "┌─────────┐",
-        "│  ●      │",
-        "│         │",
-        "│      ●  │",
-        "└─────────┘",
-    ),
-    3: (
-        "┌─────────┐",
-        "│  ●      │",
-        "│    ●    │",
-        "│      ●  │",
-        "└─────────┘",
-    ),
-    4: (
-        "┌─────────┐",
-        "│  ●   ●  │",
-        "│         │",
-        "│  ●   ●  │",
-        "└─────────┘",
-    ),
-    5: (
-        "┌─────────┐",
-        "│  ●   ●  │",
-        "│    ●    │",
-        "│  ●   ●  │",
-        "└─────────┘",
-    ),
-    6: (
-        "┌─────────┐",
-        "│  ●   ●  │",
-        "│  ●   ●  │",
-        "│  ●   ●  │",
-        "└─────────┘",
-    ),
-}
+__version__ = "1.1"
 
-DIE_HEIGHT = len(DICE_ART[1])
-DIE_WIDTH = len(DICE_ART[1][0])
+DIE_FACE_WIDTH = 7
+DIE_FACE_HEIGHT = 3
 DIE_FACE_SEPARATOR = " "
 
-def parse_input(input_string, max_dice=6):
-    """Validate user input: return an integer between 1 and `max_dice`."""
-    if input_string.isdigit():
-        value = int(input_string)
-        if 1 <= value <= max_dice:
-            return value
-    print(f"Please enter a number from 1 to {max_dice}.")
-    raise SystemExit(1)
+def parse_dice_notation(notation):
+    """Parse dice notation like '2d6+1' into (num, sides, modifier)."""
+    match = re.fullmatch(r"(\d*)d(\d+)([+-]\d+)?", notation.strip())
+    if not match:
+        print("Invalid dice notation. Use NdX+M format like '2d6+1'.")
+        raise SystemExit(1)
+    num = int(match.group(1)) if match.group(1) else 1
+    sides = int(match.group(2))
+    modifier = int(match.group(3)) if match.group(3) else 0
+    return num, sides, modifier
 
-def roll_dice(num_dice):
-    """Roll `num_dice` D6 dice and return a list of integers."""
-    return [random.randint(1, 6) for _ in range(num_dice)]
+def roll_dice(num, sides):
+    """Roll `num` dice with `sides` sides."""
+    return [random.randint(1, sides) for _ in range(num)]
 
-def generate_dice_faces_diagram(dice_values):
-    """Return a string ASCII diagram of the rolled dice."""
-    dice_faces = [_get_dice_art(value) for value in dice_values]
-    dice_rows = _generate_dice_rows(dice_faces)
-    width = len(dice_rows[0])
-    header = " RESULTS ".center(width, "~")
-    return "\n".join([header] + dice_rows)
+def generate_number_face(value, width=DIE_FACE_WIDTH):
+    """Generate a uniform dice face with centered number."""
+    value_str = str(value)
+    inner_width = width - 2
+    padding_total = inner_width - len(value_str)
+    left_padding = padding_total // 2
+    right_padding = padding_total - left_padding
+    top = "┌" + "─" * inner_width + "┐"
+    middle = "│" + " " * left_padding + value_str + " " * right_padding + "│"
+    bottom = "└" + "─" * inner_width + "┘"
+    return [top, middle, bottom]
 
-def _get_dice_art(value):
-    return DICE_ART[value]
-
-def _generate_dice_rows(dice_faces):
-    return [
-        DIE_FACE_SEPARATOR.join(die[row] for die in dice_faces)
-        for row in range(DIE_HEIGHT)
-    ]
+def generate_dice_faces_diagram(rolls):
+    """Generate a diagram for multiple dice faces."""
+    faces = [generate_number_face(value) for value in rolls]
+    rows = [DIE_FACE_SEPARATOR.join(face[i] for face in faces) for i in range(DIE_FACE_HEIGHT)]
+    header = " RESULTS ".center(len(rows[0]), "~")
+    return "\n".join([header] + rows)
 
 def clear_console():
     os.system("cls" if os.name == "nt" else "clear")
 
-if __name__ == "__main__":
+def main():
+    parser = argparse.ArgumentParser(description="Roll dice using NdX+M notation (e.g. 2d6+1)")
+    parser.add_argument("notation", type=str, help="Dice notation (e.g. 2d6+1)")
+    args = parser.parse_args()
+
     clear_console()
-    num_dice_input = input("How many dice do you want to roll? [1-6] ")
-    num_dice = parse_input(num_dice_input)
-    roll_results = roll_dice(num_dice)
-    diagram = generate_dice_faces_diagram(roll_results)
+    num, sides, modifier = parse_dice_notation(args.notation)
+    rolls = roll_dice(num, sides)
+    total = sum(rolls) + modifier
+    diagram = generate_dice_faces_diagram(rolls)
+
     print(f"\n{diagram}")
+    print(f"Modifier: {modifier:+}")
+    print(f"Total: {sum(rolls)} {modifier:+} = {total}")
+
+if __name__ == "__main__":
+    main()
