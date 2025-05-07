@@ -3,9 +3,12 @@
 
 # 🎲 Dice Roller
 
-![Test Status](https://github.com/mattyhakin/dice-roller/actions/workflows/test.yml/badge.svg)
-[![PyPI version](https://img.shields.io/pypi/v/dice-roller.svg)](https://pypi.org/project/dice-roller/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/mattyhakin/dice-roller/test.yml?branch=main&label=tests)](https://github.com/mattyhakin/dice-roller/actions/workflows/test.yml)
+[![Version](https://img.shields.io/github/v/release/mattyhakin/dice-roller?label=version)](https://github.com/mattyhakin/dice-roller/releases)
+[![License](https://img.shields.io/github/license/mattyhakin/dice-roller)](https://github.com/mattyhakin/dice-roller/blob/main/LICENSE)
+[![Python](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com/)
+[![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://commitizen-tools.github.io/commitizen/)
 
 A lightweight and flexible Python tool for simulating dice rolls. Perfect for tabletop RPGs, board games, and quick probability testing.
 
