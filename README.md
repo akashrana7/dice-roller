@@ -3,15 +3,28 @@
 
 # 🎲 Dice Roller
 
+![Test Status](https://github.com/mattyhakin/dice-roller/actions/workflows/test.yml/badge.svg)
+[![PyPI version](https://img.shields.io/pypi/v/dice-roller.svg)](https://pypi.org/project/dice-roller/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+A lightweight and flexible Python tool for simulating dice rolls. Perfect for tabletop RPGs, board games, and quick probability testing.
+
+...
+
+(Hint: this includes the previous README plus the badges)
+
+
+![Test Status](https://github.com/mattyhakin/dice-roller/actions/workflows/test.yml/badge.svg)
+
 A lightweight and flexible Python tool for simulating dice rolls. Perfect for tabletop RPGs, board games, and quick probability testing.
 
 ## 🔧 Features
 
-- Roll any standard or custom dice (e.g., d6, d20, d100)
-- Support for multiple dice (e.g., 3d6)
-- Optional modifiers (e.g., 2d8 + 3)
-- CLI interface for quick access
-- Extensible for future GUI or API versions
+- Roll any standard or custom dice using NdX+M notation (e.g., d6, d20, 3d8+2)
+- Uniform number-based ASCII output for all dice types
+- CLI tool with argparse support
+- Ready for packaging and publishing on PyPI
+- Automatic testing via GitHub Actions
 
 ## 📦 Installation
 
@@ -29,62 +42,60 @@ python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 ```
 
-Install requirements if needed:
-
+Install locally:
 ```bash
-pip install -r requirements.txt
+pip install .
 ```
 
 ## 🚀 Usage
 
-Run the CLI tool from the terminal:
+Run from the command line:
 
 ```bash
-python dice_roller.py 2d6
+dice-roller 3d6+1
 ```
 
-With modifiers:
-
-```bash
-python dice_roller.py 3d8+4
+Example output:
+```
+~~~~~~~~~~~~~~~ RESULTS ~~~~~~~~~~~~~~~
+┌─────┐ ┌─────┐ ┌─────┐
+│  2  │ │  5  │ │  6  │
+└─────┘ └─────┘ └─────┘
+Modifier: +1
+Total: 13 +1 = 14
 ```
 
-You can also import it as a module:
-
-```python
-from dice_roller import roll
-
-result = roll("4d10+2")
-print(f"Rolled: {result}")
-```
-
-## 📁 Project Structure (Planned)
+## 📁 Project Structure
 
 ```
 dice-roller/
 ├── dice_roller.py
 ├── tests/
 │   └── test_dice_roller.py
+├── setup.py
+├── pyproject.toml
 ├── README.md
 ├── LICENSE
-└── requirements.txt
+└── .github/
+    └── workflows/
+        ├── publish.yml
+        └── test.yml
 ```
 
 ## ✅ To Do
 
-- [ ] Add unit tests
-- [ ] Add input validation and error messages
-- [ ] Expand CLI options (e.g., verbosity, statistics)
-- [ ] (Optional) Add GUI version
+- [x] Add support for flexible dice types
+- [x] Uniform visual display for all rolls
+- [x] CLI interface with argparse
+- [x] PyPI publishing automation
+- [x] Automated testing with GitHub Actions
+- [ ] Add extended CLI flags (e.g. verbose, JSON output)
+- [ ] Internationalization/localization support
 
 ## 🤝 Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome! For major changes, open an issue to discuss what you'd like to change.
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Happy rolling!
