@@ -1,0 +1,14 @@
+---
+name: 📝 General Issue
+about: Open a question, task, or discussion
+title: "[Issue]: "
+labels: discussion
+assignees: ''
+
+---
+
+### Topic
+Describe the issue, question, or topic you'd like to discuss or track.
+
+### Related Info
+Link to relevant pull requests, issues, or context if applicable.
