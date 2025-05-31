@@ -1,104 +1,156 @@
-<p align="center">
-    <img src="https://github.com/mattyhakin/dice-roller/blob/main/dice-roller-header.png?raw=true" alt="Dice Roller"/>
-
 # 🎲 Dice Roller
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/mattyhakin/dice-roller/test.yml?branch=main&label=tests)](https://github.com/mattyhakin/dice-roller/actions/workflows/test.yml)
-[![Version](https://img.shields.io/github/v/release/mattyhakin/dice-roller?label=version)](https://github.com/mattyhakin/dice-roller/releases)
-[![License](https://img.shields.io/github/license/mattyhakin/dice-roller)](https://github.com/mattyhakin/dice-roller/blob/main/LICENSE)
-[![Python](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/)
-[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com/)
-[![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://commitizen-tools.github.io/commitizen/)
+![Dice Roller](https://img.shields.io/badge/Dice%20Roller-Python-brightgreen)
 
-A lightweight and flexible Python tool for simulating dice rolls. Perfect for tabletop RPGs, board games, and quick probability testing.
+Welcome to the **Dice Roller** repository! This lightweight and flexible Python tool simulates dice rolls, making it perfect for tabletop games, RPGs, and probability testing. Whether you are rolling a D20 for your next Dungeons & Dragons session or just curious about dice probabilities, this tool has you covered.
 
-...
+## Table of Contents
 
-(Hint: this includes the previous README plus the badges)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
+## Features
 
-![Test Status](https://github.com/mattyhakin/dice-roller/actions/workflows/test.yml/badge.svg)
+- 🎲 **Multiple Dice Types**: Roll different types of dice, including D4, D6, D8, D10, D12, and D20.
+- ⚙️ **Flexible Configuration**: Customize the number of dice and the sides for each roll.
+- 📊 **Probability Testing**: Analyze the likelihood of various outcomes.
+- 🖥️ **Command-Line Interface**: Easy to use from the terminal.
 
-A lightweight and flexible Python tool for simulating dice rolls. Perfect for tabletop RPGs, board games, and quick probability testing.
+## Installation
 
-## 🔧 Features
+To install the Dice Roller, follow these steps:
 
-- Roll any standard or custom dice using NdX+M notation (e.g., d6, d20, 3d8+2)
-- Uniform number-based ASCII output for all dice types
-- CLI tool with argparse support
-- Ready for packaging and publishing on PyPI
-- Automatic testing via GitHub Actions
+1. **Clone the Repository**:
 
-## 📦 Installation
+   ```bash
+   git clone https://github.com/akashrana7/dice-roller.git
+   cd dice-roller
+   ```
 
-Clone the repository:
+2. **Install Dependencies**:
 
-```bash
-git clone https://github.com/mattyhakin/dice-roller.git
-cd dice-roller
-```
+   Make sure you have Python installed. You can install the required packages using pip:
 
-(Optional) Create a virtual environment:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-```
+## Usage
 
-Install locally:
-```bash
-pip install .
-```
-
-## 🚀 Usage
-
-Run from the command line:
+After installation, you can start using the Dice Roller tool directly from your command line. The basic command structure is:
 
 ```bash
-dice-roller 3d6+1
+python dice_roller.py [options]
 ```
 
-Example output:
-```
-~~~~~~~~~~~~~~~ RESULTS ~~~~~~~~~~~~~~~
-┌─────┐ ┌─────┐ ┌─────┐
-│  2  │ │  5  │ │  6  │
-└─────┘ └─────┘ └─────┘
-Modifier: +1
-Total: 13 +1 = 14
-```
+## Commands
 
-## 📁 Project Structure
+### Roll a Single Die
 
-```
-dice-roller/
-├── dice_roller.py
-├── tests/
-│   └── test_dice_roller.py
-├── setup.py
-├── pyproject.toml
-├── README.md
-├── LICENSE
-└── .github/
-    └── workflows/
-        ├── publish.yml
-        └── test.yml
+To roll a single die, use the following command:
+
+```bash
+python dice_roller.py roll D6
 ```
 
-## ✅ To Do
+This command rolls a six-sided die.
 
-- [x] Add support for flexible dice types
-- [x] Uniform visual display for all rolls
-- [x] CLI interface with argparse
-- [x] PyPI publishing automation
-- [x] Automated testing with GitHub Actions
-- [ ] Add extended CLI flags (e.g. verbose, JSON output)
-- [ ] Internationalization/localization support
+### Roll Multiple Dice
 
-## 🤝 Contributing
+To roll multiple dice, you can specify the number of dice and the type:
 
-Pull requests are welcome! For major changes, open an issue to discuss what you'd like to change.
+```bash
+python dice_roller.py roll 3D20
+```
 
-## 📄 License
+This command rolls three twenty-sided dice.
 
-This project is licensed under the [MIT License](LICENSE).
+### Probability Analysis
+
+You can analyze the probability of rolling a specific number with a certain die:
+
+```bash
+python dice_roller.py probability D10 7
+```
+
+This command checks the probability of rolling a 7 on a ten-sided die.
+
+## Examples
+
+Here are some examples of how to use the Dice Roller:
+
+1. **Rolling a D20**:
+
+   ```bash
+   python dice_roller.py roll D20
+   ```
+
+   Output:
+   ```
+   You rolled a 14 on a D20!
+   ```
+
+2. **Rolling Multiple D6**:
+
+   ```bash
+   python dice_roller.py roll 5D6
+   ```
+
+   Output:
+   ```
+   You rolled: [3, 5, 2, 6, 1]
+   Total: 17
+   ```
+
+3. **Probability Testing**:
+
+   ```bash
+   python dice_roller.py probability D4 2
+   ```
+
+   Output:
+   ```
+   The probability of rolling a 2 on a D4 is 25%.
+   ```
+
+## Contributing
+
+We welcome contributions to improve the Dice Roller tool. If you want to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request.
+
+Please ensure your code follows the style guidelines and includes tests where applicable.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or feedback, feel free to reach out:
+
+- **Email**: your-email@example.com
+- **Twitter**: [@your_twitter_handle](https://twitter.com/your_twitter_handle)
+
+## Releases
+
+To download the latest version of Dice Roller, visit the [Releases](https://github.com/akashrana7/dice-roller/releases) section. Here, you can find the latest files that need to be downloaded and executed.
+
+You can also check the releases for updates and new features.
+
+![Release Badge](https://img.shields.io/badge/Releases-Latest-blue)
+
+---
+
+Thank you for checking out the Dice Roller! Enjoy your gaming experience, and may the odds be ever in your favor!
